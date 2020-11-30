@@ -40,3 +40,4 @@ it('shows a comment box', ()=>{
 it('shows a comment list', ()=>{
     expect(wrapped.find(CommentList).length).toEqual(1) // one comment box will be returned.
 });
+//
