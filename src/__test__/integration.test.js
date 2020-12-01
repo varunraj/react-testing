@@ -38,7 +38,7 @@ it('can  fetch a list of comments and display them' ,(done)=>{
     // pause for second for req to complete before checking expect
     // Expect to find a list of comments
 
-    setTimeout(()=>{
+    setTimeout(()=>{  // we can do the same using moxios.wait
         wrapped.update()
         expect(wrapped.find('li').length).toEqual(2);
         done() // we need to call done for jest to know that test is completed only after setTimeOut
