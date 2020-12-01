@@ -1,4 +1,6 @@
-import { SAVE_COMMENT } from 'actions/types';
+import { SAVE_COMMENT, FETCH_COMMENTS } from 'actions/types';
+import axios from 'axios'
+
 
 export function saveComment(comment) {
     return {
@@ -6,3 +8,14 @@ export function saveComment(comment) {
         payload:comment
     }
 }
+
+export function fetchComments() {
+    const response = axios.get('http://jsonplaceholder.typicode.com/comments')
+
+    // redux promise middle ware took care of stopping dispatch until promise is resolved.
+
+    return  {
+        type : FETCH_COMMENTS,
+        payload:response
+    };
+};
